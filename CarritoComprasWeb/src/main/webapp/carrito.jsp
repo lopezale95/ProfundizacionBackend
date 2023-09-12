@@ -1,5 +1,6 @@
 
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -48,27 +49,62 @@
         </div>
         </nav>
         <div class="container mt-4">
+            <h3>Carrito</h3>
+            <br>
             <div class="row">
                 <div class="col-sm-8">
-                    <table border="1">
+                    <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>     
+                                <th>ITEM</th>
+                                <th>NOMBRES</th>
+                                <th>DESCRIPCION</th>
+                                <th>PRECIO</th>
+                                <th>CANT</th>
+                                <th>SUBTOTAL</th>
+                                <th>ACCION</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            <c:forEach var="car" items="${carrito}">
+                              <tr>
+                                <th>${car.getItem()}</th>
+                                <th>${car.getNombre()}</th>
+                                <th>${car.getDescripcion()}
+                                    <<img src="ControladorIMG?id=${car.getIdproducto()}" width="100" height="100">
+                                </th>
+                                <th>${car.getPreciocompra}</th>
+                                <th>${car.getCantidad}</th>
+                                <th>${car.getSubTotal}</th>
+                                <th>
+                                    <a href="#">eliminar</a>
+                                    <a href="#">actualizar</a>
+                                </th>
+                              </tr> 
+                            </c:forEach>
+                             
                         </tbody>
                             
                     </table>
                 </div>
                 <div class="col-sm-4">
-                    
+                    <div class="card">
+                        <div class="card-header">
+                            <<h3>Generar Compra</h3>
+                        </div>
+                        <div class="card-body">
+                            <label>Subtotal:</label>
+                            <input type="text" readonly="" class="form-control">
+                            <label>Descuento:</label>
+                            <input type="text" readonly="" class="form-control">
+                            <label>Total a Pagar:</label>
+                            <input type="text" readonly="" class="form-control">
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-info btn-block">Realizar Pago</a>
+                            <a href="#" class="btn btn-danger btn-block">Generar Compra</a>
+                        </div>
+                    </div> 
                 </div>
                 
             </div>
