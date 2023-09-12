@@ -59,7 +59,7 @@
                         <img src="ControladorIMG?id=${p.getId()}" width="200" height="180">
                         </div>
                         <div class="card-footer text-center">
-                        <label>Descripcion Producto</label>
+                        <label>${p.getDescripcion}</label>
                         </div>
                         <div>
                             <a href="" class="btn btn-outline-info">Agregar a Carrito</a>
