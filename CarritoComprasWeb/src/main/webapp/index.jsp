@@ -23,7 +23,7 @@
                 <a class="nav-link" href="#">Ofertas del Dia</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Carrito de Compras</a>
+                  <a class="nav-link disabled" aria-disabled="true"><i class="fas fa-cart-plus">(<label style="color: darkorange">${contador}</label>)</i>Carrito</a>
               </li>
             </ul>
             <form class="d-flex" role="search">
@@ -62,7 +62,7 @@
                         <label>${p.getDescripcion}</label>
                         </div>
                         <div>
-                            <a href="" class="btn btn-outline-info">Agregar a Carrito</a>
+                            <a href="Controlador?accion=AgregarCarrito&id=${p.getId()}" class="btn btn-outline-info">Agregar a Carrito</a>
                             <a href="" class="btn btn-danger">Comprar</a>
                         </div>
                     </div>
