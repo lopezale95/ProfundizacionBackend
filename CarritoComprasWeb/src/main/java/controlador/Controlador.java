@@ -25,17 +25,40 @@ public class Controlador extends HttpServlet {
     double totalPagar=0.0;
     int cantidad=1;
     
-    
+    int idp;
+    Carrito car;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String accion=request.getParameter("accion");
         productos=pdao.listar();
         switch (accion) {
-            case "AgregarCarrito":
+            case "comprar":
+                totalPagar=0.0;
                 int idp= Integer.parseInt(request.getParameter("id"));
                 p=pdao.listarId(idp);
                 item=item+1;
                 Carrito car=new Carrito();
+                car.setItem(item);
+                car.setIdproducto(p.getId());
+                car.setNombre(p.getNombres());
+                car.setDescripcion(p.getDescripcion());
+                car.setPreciocompra(p.getPrecio());
+                car.setCantidad(cantidad);
+                car.setSubTotal(cantidad*p.getPrecio());
+                listaCarrito.add(car);
+                for (int i = 0; i < listaCarrito.size(); i++) {
+                    totalPagar=totalPagar+listaCarrito.get(i).getSubTotal();
+                }
+                request.setAttribute("totalPagar",totalPagar);
+                request.setAttribute("carrito",listaCarrito);
+                request.setAttribute("contador", listaCarrito.size());
+                request.getRequestDispatcher("carrito.jsp").forward(request, response);
+                break;
+            case "AgregarCarrito":
+                idp= Integer.parseInt(request.getParameter("id"));
+                p=pdao.listarId(idp);
+                item=item+1;
+                car=new Carrito();
                 car.setItem(item);
                 car.setIdproducto(p.getId());
                 car.setNombre(p.getNombres());
