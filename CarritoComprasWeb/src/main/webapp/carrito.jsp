@@ -94,11 +94,11 @@
                         </div>
                         <div class="card-body">
                             <label>Subtotal:</label>
-                            <input type="text" readonly="" class="form-control">
+                            <input type="text" value="$.${totalPagar}0" readonly="" class="form-control">
                             <label>Descuento:</label>
-                            <input type="text" readonly="" class="form-control">
+                            <input type="text" value="$0.00" readonly="" class="form-control">
                             <label>Total a Pagar:</label>
-                            <input type="text" readonly="" class="form-control">
+                            <input type="text" value="$.${totalPagar}0" readonly="" class="form-control">
                         </div>
                         <div class="card-footer">
                             <a href="#" class="btn btn-info btn-block">Realizar Pago</a>

@@ -50,6 +50,10 @@ public class Controlador extends HttpServlet {
             case "Carrito":
                 totalPagar=0.0;
                 request.setAttribute("carrito",listaCarrito);
+                for (int i = 0; i < listaCarrito.size(); i++) {
+                    totalPagar=totalPagar+listaCarrito.get(i).getSubTotal();
+                }
+                request.setAttribute("totalPagar",totalPagar);
                 request.getRequestDispatcher("carrito.jsp").forward(request, response);
                 break;    
             default:
