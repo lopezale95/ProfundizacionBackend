@@ -23,7 +23,7 @@
                 <a class="nav-link" href="#">Ofertas del Dia</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link disabled" aria-disabled="true"><i class="fas fa-cart-plus">(<label style="color: darkorange">${contador}</label>)</i>Carrito</a>
+                  <a class="nav-link " aria-disabled="true" href="Controlador?accion=Carrito" ><i class="fas fa-cart-plus">(<label style="color: darkorange">${contador}</label>)</i>Carrito</a>
               </li>
             </ul>
             <form class="d-flex" role="search">
