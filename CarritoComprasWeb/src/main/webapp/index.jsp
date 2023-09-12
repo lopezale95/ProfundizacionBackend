@@ -1,5 +1,4 @@
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,7 +17,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Controlador?accion=home">Home</a>
+                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Ofertas del Dia</a>
@@ -49,25 +48,21 @@
         </nav>
         <div class="container mt-2">
             <div class="row">
-                <c:forEach var="p" items="${productos}">
-                   <div class="col-sm-4">
+                    
+                <div class="col-sm-4">
                     <div class="card">
-                        <div class="card-header">
-                        <label>${p.getNombres()}</label>
-                        </div>
-                        <div class="card-body">
+                        <div class="card-header"></div>
+                        <label>Nombre Producto</label>
+                        <div class="card-body"></div>
                         <i>$999</i>
                         <img src="" width="200" height="180">
-                        </div>  
-                        <div class="card-footer text-center">
+                        <div class="card-footer text-center"></div>
                         <label>Descripcion Producto</label>
-                        </div>
                         <div>
                             <a href="" class="btn btn-outline-info">Agregar a Carrito</a>
                             <a href="" class="btn btn-danger">Comprar</a>
                         </div>
-                    </div> 
-                </c:forEach>
+                    </div>
                 </div>
             </div>
         </div>
