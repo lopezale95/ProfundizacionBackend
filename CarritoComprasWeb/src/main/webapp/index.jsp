@@ -46,18 +46,20 @@
           </div>
         </div>
         </nav>
-        <div class="container mt-2">
+        <div class="container mt-4">
             <div class="row">
-                    
                 <div class="col-sm-4">
                     <div class="card">
-                        <div class="card-header"></div>
+                        <div class="card-header">   
                         <label>Nombre Producto</label>
-                        <div class="card-body"></div>
+                        </div>
+                        <div class="card-body">
                         <i>$999</i>
                         <img src="" width="200" height="180">
-                        <div class="card-footer text-center"></div>
+                        </div>
+                        <div class="card-footer text-center">
                         <label>Descripcion Producto</label>
+                        </div>
                         <div>
                             <a href="" class="btn btn-outline-info">Agregar a Carrito</a>
                             <a href="" class="btn btn-danger">Comprar</a>
